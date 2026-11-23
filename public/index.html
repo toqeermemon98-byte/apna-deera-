@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090806">
+  <meta name="description" content="Apna Deera Restaurant — fine dining, authentic flavours and warm hospitality in Ghotki.">
+  <title>Apna Deera Restaurant | Ghotki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="topline"><span>DEVRI ROAD, GHOTKI</span><span>OPEN DAILY · 12:00 PM – 12:00 AM</span><a href="https://wa.me/923021360530" target="_blank">WHATSAPP: +92 302 1360530</a></div>
+  <header class="site-header">
+    <a class="brand" href="#home"><img src="/assets/apna-deera-logo.jpg" alt="Apna Deera Restaurant logo"><span><b>APNA DEERA</b><small>RESTAURANT</small></span></a>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a><a href="#about">About Us</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#reservation">Reservation</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="admin-nav-link" href="/admin"><span aria-hidden="true">⚙</span> Admin Panel</a>
+    <button class="cart-open" id="cartOpen">Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-shade"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">A TASTE OF EXCELLENCE · GHOTKI</p>
+        <h1>Good Food.<br><em>Good Mood.</em></h1>
+        <p class="hero-copy">A memorable dining experience, crafted with passion and served with warmth.</p>
+        <div class="hero-actions"><a class="btn btn-gold" href="#menu">Explore Menu</a><a class="btn btn-outline" href="#reservation">Book a Table</a></div>
+      </div>
+      <div class="hero-dots"><button class="active" data-slide="0" aria-label="Slide 1"></button><button data-slide="1" aria-label="Slide 2"></button><button data-slide="2" aria-label="Slide 3"></button></div>
+      <div class="hero-caption">AUTHENTIC FLAVOURS · PREMIUM HOSPITALITY</div>
+    </section>
+
+    <section class="intro section-pad" id="about">
+      <div class="intro-image reveal"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85" alt="Elegant restaurant dining table"><span class="image-stamp">EST. WITH<br>PASSION</span></div>
+      <div class="intro-copy reveal"><p class="eyebrow">WELCOME TO APNA DEERA</p><h2>Where every meal<br>feels <em>special.</em></h2><p>At Apna Deera, we bring people together over delicious food, thoughtful service and a welcoming atmosphere. From traditional favourites to modern classics, every plate is prepared to make your visit memorable.</p><p>Join us with family and friends for a relaxed meal, a celebration or a quick bite.</p><a class="text-link" href="#reservation">Discover the experience <span>↗</span></a></div>
+    </section>
+
+    <section class="signature section-pad">
+      <div class="section-heading"><p class="eyebrow">MADE TO BE REMEMBERED</p><h2>Our <em>Signature</em> Experience</h2><p>Fresh ingredients, generous flavours and a little golden touch.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=85" alt="Freshly baked pizza"><div><span>01</span><h3>Freshly Prepared</h3><p>Made to order with care and quality ingredients.</p></div></article>
+        <article class="feature-card"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" alt="Grilled barbecue platter"><div><span>02</span><h3>Rich Flavours</h3><p>Classic favourites and satisfying signature dishes.</p></div></article>
+        <article class="feature-card"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=85" alt="Warm restaurant interior"><div><span>03</span><h3>Warm Hospitality</h3><p>A comfortable place for every occasion.</p></div></article>
+      </div>
+    </section>
+
+    <section class="menu-section section-pad" id="menu">
+      <div class="section-heading"><p class="eyebrow">EXPLORE OUR FLAVOURS</p><h2>The <em>Menu</em></h2><p>Choose your favourites and add them to your order.</p></div>
+      <div class="menu-toolbar"><div class="menu-tabs" id="menuTabs"></div><input id="menuSearch" type="search" placeholder="Search dishes..." aria-label="Search menu"></div>
+      <div class="menu-grid" id="menuGrid"></div>
+      <div class="menu-poster-link"><a href="/assets/menu-poster.png" target="_blank">View supplied restaurant menu poster ↗</a></div>
+    </section>
+
+    <section class="qr-section section-pad">
+      <div class="qr-card reveal"><div><p class="eyebrow">AT YOUR TABLE</p><h2>Scan. Browse.<br><em>Enjoy.</em></h2><p>Choose a table number and generate its unique QR code. Guests scan it to open this menu with their table number attached to the order.</p><button class="btn btn-gold" id="showQr">Show Table QR</button></div><div class="qr-display"><label class="qr-table-label" for="qrTableSelect">Choose table</label><select id="qrTableSelect"><option>T01</option><option>T02</option><option>T03</option><option>T04</option><option>T05</option><option>T06</option><option>T07</option><option>T08</option><option>T09</option><option>T10</option></select><div id="tableQr"></div><small>APNA DEERA · DIGITAL MENU</small></div></div>
+      <div class="scanner-row"><div><b>Have a table QR?</b><span>Use your phone camera or open the scanner below.</span></div><button class="btn btn-outline" id="scannerOpen">Open QR Scanner</button></div>
+    </section>
+
+    <section class="gallery-section section-pad" id="gallery">
+      <div class="section-heading"><p class="eyebrow">A GLIMPSE INSIDE</p><h2>Our <em>Gallery</em></h2><p>Good food looks even better when shared.</p></div>
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=85" alt="Restaurant interior">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=85" alt="Grilled food">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85" alt="Pizza">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Burger">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85" alt="Fresh salad">
+      </div>
+    </section>
+
+    <section class="reviews-section section-pad" id="reviews">
+      <div class="section-heading"><p class="eyebrow">YOUR WORDS MATTER</p><h2>Guest <em>Reviews</em></h2><p>Share your experience with Apna Deera.</p></div>
+      <div class="review-layout"><div id="reviewList" class="review-list"><div class="review-quote">“A beautiful place to enjoy good food with family.”<small>— Apna Deera guest</small></div></div>
+      <form id="reviewForm" class="form-card"><h3>Leave a Review</h3><label>Your name<input name="name" required placeholder="Full name"></label><label>Rating<select name="rating" required><option value="5">★★★★★ — Excellent</option><option value="4">★★★★ — Very good</option><option value="3">★★★ — Good</option><option value="2">★★ — Fair</option><option value="1">★ — Poor</option></select></label><label>Your review<textarea name="message" required rows="3" placeholder="Tell us about your visit..."></textarea></label><button class="btn btn-gold" type="submit">Submit Review</button><p class="form-message" id="reviewMessage"></p></form></div>
+    </section>
+
+    <section class="reservation-section section-pad" id="reservation">
+      <div class="reservation-copy"><p class="eyebrow">MAKE IT A MOMENT</p><h2>Reserve your<br><em>table.</em></h2><p>Planning a family dinner or a special get-together? Send us your reservation request.</p><p class="contact-line">Call / WhatsApp <b>+92 302 1360530</b></p></div>
+      <form id="reservationForm" class="form-card reservation-form"><div class="form-two"><label>Your name<input name="name" required placeholder="Full name"></label><label>Phone number<input name="phone" required placeholder="03xx xxxxxxx"></label></div><div class="form-two"><label>Date<input type="date" name="date" required></label><label>Time<input type="time" name="time" required></label></div><div class="form-two"><label>Guests<select name="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></label><label>Special request<input name="notes" placeholder="Optional"></label></div><button class="btn btn-gold" type="submit">Request Reservation</button><p class="form-message" id="reservationMessage"></p></form>
+    </section>
+
+    <section class="contact-section section-pad" id="contact">
+      <div class="section-heading"><p class="eyebrow">WE'RE HERE FOR YOU</p><h2>Visit <em>Apna Deera</em></h2><p>We look forward to welcoming you.</p></div>
+      <div class="contact-grid"><div class="contact-card"><span>⌖</span><small>OUR ADDRESS</small><b>Devri Road, Ghotki</b></div><div class="contact-card"><span>☎</span><small>CALL / WHATSAPP</small><b>+92 302 1360530</b><a href="https://wa.me/923021360530" target="_blank">Chat on WhatsApp ↗</a></div><div class="contact-card"><span>✉</span><small>EMAIL</small><b>toqeermemon98@gmail.com</b><a href="mailto:toqeermemon98@gmail.com">Send an email ↗</a></div></div>
+      <div class="map-frame"><iframe title="Map of Ghotki" src="https://www.google.com/maps?q=Devri%20Road%20Ghotki%20Pakistan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </section>
+  </main>
+
+  <footer><a class="footer-brand" href="#home">APNA DEERA <span>RESTAURANT</span></a><p>Good Food · Good Mood</p><div class="footer-links"><a href="#about">About</a><a href="#menu">Menu</a><a href="#reservation">Reservation</a><a href="#contact">Contact</a><a href="/admin">Staff / Admin</a></div><small>© <span id="year"></span> Apna Deera Restaurant. All rights reserved.</small></footer>
+
+  <button class="chat-launch" id="chatLaunch" aria-label="Open assistant">✦</button>
+  <div class="chat-widget" id="chatWidget"><div class="chat-head"><div><b>Deera Assistant</b><small>Online · Restaurant help</small></div><button id="chatClose" aria-label="Close chat">×</button></div><div class="chat-body" id="chatBody"><div class="bot-msg">Assalam-o-Alaikum! Welcome to Apna Deera. I can help with menu, timings, delivery, reservations and contact details.</div></div><div class="chat-suggestions"><button data-question="What are your timings?">Timings</button><button data-question="How can I book a table?">Book a table</button><button data-question="How can I order?">How to order</button></div><form id="chatForm"><input id="chatInput" placeholder="Ask me something..." autocomplete="off"><button>Send</button></form></div>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer"><div class="drawer-head"><h3>Your Order</h3><button id="cartClose" aria-label="Close cart">×</button></div><div id="cartItems" class="cart-items"><p class="empty-cart">Your cart is waiting for something delicious.</p></div><div class="cart-bottom"><div class="total-line"><span>Subtotal</span><b id="cartTotal">Rs. 0</b></div><button class="btn btn-gold full" id="checkoutOpen">Continue to Checkout</button></div></aside>
+
+  <div class="modal" id="checkoutModal"><div class="modal-card"><button class="modal-close" data-close="checkoutModal">×</button><p class="eyebrow">ALMOST THERE</p><h2>Complete your <em>order</em></h2><form id="checkoutForm"><label>Full name<input name="customer" required></label><label>Phone number<input name="phone" required placeholder="03xx xxxxxxx"></label><label>Delivery address<input name="address" placeholder="House / street / area"></label><div class="form-two"><label>Order type<select name="orderType"><option>Delivery</option><option>Pickup</option><option>Dine-in</option></select></label><label>Payment method<select name="payment"><option>Cash on Delivery</option><option>Cash at Restaurant</option><option>JazzCash</option><option>EasyPaisa</option><option>Bank Transfer</option></select></label></div><label>Preferred order date & time<input type="datetime-local" name="scheduledAt"></label><label>Order notes<textarea name="notes" rows="2" placeholder="Any special instructions?"></textarea></label><div class="checkout-total">Order total <b id="checkoutTotal">Rs. 0</b></div><button class="btn btn-gold full" type="submit">Place Order</button><p class="form-message" id="checkoutMessage"></p></form></div></div>
+
+  <div class="modal" id="qrModal"><div class="modal-card qr-modal-card"><button class="modal-close" data-close="qrModal">×</button><p class="eyebrow">DIGITAL TABLE MENU</p><h2>Scan to <em>order</em></h2><div id="largeQr"></div><p>Scan with your phone camera to open the digital menu. This QR includes the selected table number. For customer phones, first publish the website on a public HTTPS address, then generate and print each table QR.</p><button class="btn btn-outline" id="copySiteUrl">Copy current website link</button></div></div>
+  <div class="modal" id="scannerModal"><div class="modal-card"><button class="modal-close" data-close="scannerModal">×</button><p class="eyebrow">TABLE QR SCANNER</p><h2>Scan your <em>QR code</em></h2><div id="reader"></div><p class="muted">Camera access is required. If camera scanning is unavailable, use your phone camera app.</p><button class="btn btn-outline" id="stopScanner">Close scanner</button></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js'"></script>
+  <script src="https://unpkg.com/html5-qrcode" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js'"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
