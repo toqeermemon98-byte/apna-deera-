@@ -216,13 +216,29 @@ async function api(url, opts = {}) {
     headers
   });
 
-  const data = await response.json();
+  const text = await response.text();
 
-  if (!response.ok) {
-    throw new Error(data.error || 'Request failed');
-  }
+if (!text.trim()) {
+  throw new Error(
+    `${url} returned an empty response. HTTP ${response.status}`
+  );
+}
 
-  return data;
+let data;
+
+try {
+  data = JSON.parse(text);
+} catch {
+  throw new Error(
+    `${url} returned invalid JSON. HTTP ${response.status}`
+  );
+}
+
+if (!response.ok) {
+  throw new Error(data.error || 'Request failed');
+}
+
+return data;
 }
 
 async function load() {
