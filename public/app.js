@@ -73,7 +73,34 @@ function renderCart(){
 function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600);}
 function openCart(){ $("#cartDrawer").classList.add("open");$("#cartOverlay").classList.add("open");}
 function closeCart(){ $("#cartDrawer").classList.remove("open");$("#cartOverlay").classList.remove("open");}
-async function api(url,opts={}){const r=await fetch(url,{headers:{"Content-Type":"application/json"},...opts});const data=await r.json();if(!r.ok)throw new Error(data.error||"Something went wrong");return data;}
+
+async function api(url, opts={}) {
+  const r = await fetch(url, {
+    ...opts,
+    headers: {
+      "Content-Type": "application/json",
+      ...(opts.headers || {})
+    }
+  });
+
+  const text = await r.text();
+  let data;
+
+  try {
+    data = JSON.parse(text);
+  } catch {
+    throw new Error(
+      `Server response error (${r.status}): ${text.slice(0,150) || "Empty response"}`
+    );
+  }
+
+  if (!r.ok) {
+    throw new Error(data.error || "Something went wrong");
+  }
+
+  return data;
+}
+
 
 renderTabs();renderMenu();renderCart();$("#year").textContent=new Date().getFullYear();
 $("#menuTabs").addEventListener("click",e=>{const b=e.target.closest("[data-cat]");if(!b)return;activeCategory=b.dataset.cat;renderTabs();renderMenu();});
